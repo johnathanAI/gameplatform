@@ -1,0 +1,26 @@
+[
+	{
+		"Name": "Outrun",
+		"url": "./games/javascript-racer-master",
+		"icon" : "./games/javascript-racer-master/icon.png",
+		"metadata":{
+			"tags": [ "Reaction", "Finger" ]
+		}
+	},
+	{
+		"Name": "Pong",
+		"url": "./games/javascript-pong-master",
+		"icon" : "./games/javascript-pong-master/icon.png",
+		"metadata":{
+			"tags": [ "Finger" ]
+		}
+	},
+	{
+		"Name": "Breakout",
+		"url":"./games/javascript-breakout-master",
+		"icon" : "./games/javascript-breakout-master/icon.png",
+		"metadata":{
+			"tags": [ "Continue Force", "Reaction"]
+		}
+	}
+]
