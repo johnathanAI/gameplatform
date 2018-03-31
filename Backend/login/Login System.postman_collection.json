@@ -1,0 +1,885 @@
+{
+	"info": {
+		"name": "Login System",
+		"_postman_id": "fa073092-e61f-b1ea-fcfc-0d6ef6aff766",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User CRUD",
+			"description": "",
+			"item": [
+				{
+					"name": "Add User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"action\" : \"add\",\n\t\"token\": \"kv6mjsuotmmrnhq3jej7r\",\n\t\"user\" : {\n\t\t\"username\" : \"user1\",\n\t\t\"password\" : \"user1\",\n\t\t\"admin\" : false\n\t}\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user"
+							]
+						},
+						"description": ""
+					},
+					"response": [
+						{
+							"id": "123aa3eb-1790-4119-a82f-225108ace731",
+							"name": "Add User",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"action\" : \"add\",\n\t\"token\": \"kv6mjsuotmmrnhq3jej7r\",\n\t\"user\" : {\n\t\t\"username\" : \"user1\",\n\t\t\"password\" : \"user1\",\n\t\t\"admin\" : false\n\t}\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/user",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept",
+									"name": "Access-Control-Allow-Headers",
+									"description": "Used in response to a preflight request to indicate which HTTP headers can be used when making the actual request."
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*",
+									"name": "Access-Control-Allow-Origin",
+									"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"name": "Connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "Content-Length",
+									"value": "84",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 10 Dec 2017 08:05:41 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"54-T4wvqwipMpmXTwDanGGcHdHdV3U\"",
+									"name": "ETag",
+									"description": "An identifier for a specific version of a resource, often a message digest"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"name": "X-Powered-By",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Tue Jan 19 2038 11:14:07 GMT+0800 (HKT)",
+									"httpOnly": false,
+									"domain": "localhost",
+									"path": "/",
+									"secure": false,
+									"value": "7d8a92637b56ce19788eb9dced6d75ff",
+									"key": "PHPSESSID"
+								}
+							],
+							"responseTime": 98,
+							"body": "{\"token\":\"gawsyjtv04si7audhfjx\",\"message\":\"SUCCESS\",\"id\":\"5a2cead5955a95f29aadf02a\"}"
+						}
+					]
+				},
+				{
+					"name": "Remove User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"action\" : \"remove\",\n\t\"token\": \"4e3rikgjplqw3eyszqowhp\",\n\t\"id\" : \"5a2ce6ab955a95f29aadf029\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user"
+							]
+						},
+						"description": "1. Cannot Remove Last Admin\n2. Cannot Remove yourself"
+					},
+					"response": [
+						{
+							"id": "e88a19d4-c043-4a55-b8c4-1831bbe7577b",
+							"name": "Remove User (Last Admin)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"action\" : \"remove\",\n\t\"token\": \"l3rz1mogh39cczdrk8bzx\",\n\t\"id\" : \"5a2cead5955a95f29aadf02a\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/user",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept",
+									"name": "Access-Control-Allow-Headers",
+									"description": "Used in response to a preflight request to indicate which HTTP headers can be used when making the actual request."
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*",
+									"name": "Access-Control-Allow-Origin",
+									"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"name": "Connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "Content-Length",
+									"value": "57",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 10 Dec 2017 08:07:22 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"39-S0e98y4/6PzzFPpKJVjLkLxr8dU\"",
+									"name": "ETag",
+									"description": "An identifier for a specific version of a resource, often a message digest"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"name": "X-Powered-By",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Tue Jan 19 2038 11:14:07 GMT+0800 (HKT)",
+									"httpOnly": false,
+									"domain": "localhost",
+									"path": "/",
+									"secure": false,
+									"value": "7d8a92637b56ce19788eb9dced6d75ff",
+									"key": "PHPSESSID"
+								}
+							],
+							"responseTime": 47,
+							"body": "{\"token\":\"fcfsqxkl6vw6rgh85x5sob\",\"message\":\"LAST_ADMIN\"}"
+						},
+						{
+							"id": "9573ee06-bd33-4479-b076-784f1d714461",
+							"name": "Remove User (SUCCESS)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"disabled": false
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"action\" : \"remove\",\n\t\"token\": \"gir0wxaigl6ppaf2uy2gjj\",\n\t\"id\" : \"5a2cead5955a95f29aadf02a\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/user",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept",
+									"name": "Access-Control-Allow-Headers",
+									"description": "Used in response to a preflight request to indicate which HTTP headers can be used when making the actual request."
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*",
+									"name": "Access-Control-Allow-Origin",
+									"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"name": "Connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "Content-Length",
+									"value": "54",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 10 Dec 2017 08:13:09 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"36-f3YTUBvcD5UX3goD3uqFurZi8LI\"",
+									"name": "ETag",
+									"description": "An identifier for a specific version of a resource, often a message digest"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"name": "X-Powered-By",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Tue Jan 19 2038 11:14:07 GMT+0800 (HKT)",
+									"httpOnly": false,
+									"domain": "localhost",
+									"path": "/",
+									"secure": false,
+									"value": "7d8a92637b56ce19788eb9dced6d75ff",
+									"key": "PHPSESSID"
+								}
+							],
+							"responseTime": 82,
+							"body": "{\"token\":\"m0u3mlug5ers0xz69yp1h7\",\"message\":\"SUCCESS\"}"
+						},
+						{
+							"id": "b94b932d-5571-4547-b1a1-6b4a23e46188",
+							"name": "Remove User (Cannot Remove Yourself)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"disabled": false
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"action\" : \"remove\",\n\t\"token\": \"4e3rikgjplqw3eyszqowhp\",\n\t\"id\" : \"5a2ce6ab955a95f29aadf029\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8000/api/user",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"_postman_previewtype": "text",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "Origin, X-Requested-With, Content-Type, Accept",
+									"name": "Access-Control-Allow-Headers",
+									"description": "Used in response to a preflight request to indicate which HTTP headers can be used when making the actual request."
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*",
+									"name": "Access-Control-Allow-Origin",
+									"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"name": "Connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "Content-Length",
+									"value": "59",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 10 Dec 2017 08:13:58 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3b-bERjCVga8OnNFw1ZoqRPB5BeOVI\"",
+									"name": "ETag",
+									"description": "An identifier for a specific version of a resource, often a message digest"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"name": "X-Powered-By",
+									"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+								}
+							],
+							"cookie": [
+								{
+									"expires": "Tue Jan 19 2038 11:14:07 GMT+0800 (HKT)",
+									"httpOnly": false,
+									"domain": "localhost",
+									"path": "/",
+									"secure": false,
+									"value": "7d8a92637b56ce19788eb9dced6d75ff",
+									"key": "PHPSESSID"
+								}
+							],
+							"responseTime": 28,
+							"body": "{\"token\":\"onp4xw9xckn6rczpdzxtqh\",\"message\":\"SELF_REMOVAL\"}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"action\" : \"login\",\n\t\"username\" : \"admin\",\n\t\"password\" : \"admin\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/user/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user",
+						"login"
+					]
+				},
+				"description": "action : Indicate what is your action"
+			},
+			"response": [
+				{
+					"id": "b8228bbc-6d1f-4cb3-be6c-5907028586f9",
+					"name": "Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"action\" : \"login\",\n\t\"username\" : \"admin\",\n\t\"password\" : \"admin\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept",
+							"name": "Access-Control-Allow-Headers",
+							"description": "Used in response to a preflight request to indicate which HTTP headers can be used when making the actual request."
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*",
+							"name": "Access-Control-Allow-Origin",
+							"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "66",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 10 Dec 2017 07:54:53 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"42-vx9Wd6S7vc1yF18rymSPW0kImpk\"",
+							"name": "ETag",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Tue Jan 19 2038 11:14:07 GMT+0800 (HKT)",
+							"httpOnly": false,
+							"domain": "localhost",
+							"path": "/",
+							"secure": false,
+							"value": "7d8a92637b56ce19788eb9dced6d75ff",
+							"key": "PHPSESSID"
+						}
+					],
+					"responseTime": 95,
+					"body": "{\"token\":\"h3d98guqypn7491l1gnx8\",\"message\":\"SUCCESS\",\"admin\":true}"
+				}
+			]
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"token\": \"0gs27qc1vjwyqoxltcywnh\",\n\t\"action\" : \"logout\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/user/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user",
+						"logout"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Find all User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"action\" : \"search\",\n\t\"token\": \"m0u3mlug5ers0xz69yp1h7\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user"
+					]
+				},
+				"description": ""
+			},
+			"response": [
+				{
+					"id": "ba1aa5c1-10a4-4dc7-961b-1c7a92e296e4",
+					"name": "Find all User",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"action\" : \"search\",\n\t\"token\": \"h3d98guqypn7491l1gnx8\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept",
+							"name": "Access-Control-Allow-Headers",
+							"description": "Used in response to a preflight request to indicate which HTTP headers can be used when making the actual request."
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*",
+							"name": "Access-Control-Allow-Origin",
+							"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "205",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 10 Dec 2017 07:55:51 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"cd-CjO6fBZ4mZnUvz4F/pxFawiL7Ns\"",
+							"name": "ETag",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Tue Jan 19 2038 11:14:07 GMT+0800 (HKT)",
+							"httpOnly": false,
+							"domain": "localhost",
+							"path": "/",
+							"secure": false,
+							"value": "7d8a92637b56ce19788eb9dced6d75ff",
+							"key": "PHPSESSID"
+						}
+					],
+					"responseTime": 33,
+					"body": "{\"token\":\"sp8vumvw4wn14eujs7gt\",\"message\":\"SUCCESS\",\"user\":[{\"id\":\"5a2ce6ab955a95f29aadf029\",\"username\":\"admin\",\"admin\":true,\"create_at\":\"2017-12-10T07:47:55.858Z\",\"update_at\":\"2017-12-10T07:47:55.858Z\"}]}"
+				}
+			]
+		},
+		{
+			"name": "Edit User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"action\" : \"edit\",\n\t\"token\": \"7t76eww0jice35izecb2b\",\n\t\"user\" : {\n\t\t\"id\" : \"5a2ce6ab955a95f29aadf029\",\n\t\t\"username\" : \"admin2\",\n\t\t\"password\" : \"admin2\",\n\t\t\"admin\" : true\n\t}\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user"
+					]
+				},
+				"description": "You can use the search user to display all user then use this api to edit the user by its ID.<br>\n1. id\n\t* Is a must need attribute\n\t* MongoDB's Unique ID\n2. username\n\t* The new username\n3. password\n\t* The new Password\n4. admin\n\t* The change of admin privilege"
+			},
+			"response": [
+				{
+					"id": "5f07745a-6e37-49dc-bd5c-675103b03da4",
+					"name": "Edit User",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"action\" : \"edit\",\n\t\"token\": \"7t76eww0jice35izecb2b\",\n\t\"user\" : {\n\t\t\"id\" : \"5a2ce6ab955a95f29aadf029\",\n\t\t\"username\" : \"admin2\",\n\t\t\"password\" : \"admin2\",\n\t\t\"admin\" : true\n\t}\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"_postman_previewtype": "text",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept",
+							"name": "Access-Control-Allow-Headers",
+							"description": "Used in response to a preflight request to indicate which HTTP headers can be used when making the actual request."
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*",
+							"name": "Access-Control-Allow-Origin",
+							"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive",
+							"name": "Connection",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"key": "Content-Length",
+							"value": "86",
+							"name": "Content-Length",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 10 Dec 2017 08:00:18 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"56-HtmuA4bpieFmufrjO861Gbb5/wk\"",
+							"name": "ETag",
+							"description": "An identifier for a specific version of a resource, often a message digest"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express",
+							"name": "X-Powered-By",
+							"description": "Specifies the technology (ASP.NET, PHP, JBoss, e.g.) supporting the web application (version details are often in X-Runtime, X-Version, or X-AspNet-Version)"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Tue Jan 19 2038 11:14:07 GMT+0800 (HKT)",
+							"httpOnly": false,
+							"domain": "localhost",
+							"path": "/",
+							"secure": false,
+							"value": "7d8a92637b56ce19788eb9dced6d75ff",
+							"key": "PHPSESSID"
+						}
+					],
+					"responseTime": 92,
+					"body": "{\"token\":\"3gsakvn1l3j2wkftwittwp\",\"message\":\"SUCCESS\",\"id\":\"5a2ce6ab955a95f29aadf029\"}"
+				}
+			]
+		}
+	]
+}
